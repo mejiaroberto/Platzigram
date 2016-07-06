@@ -4,7 +4,8 @@
   "description": "Comparte tus fotos estudiando en Platzi con el resto de la comunidad",
   "main": "server,js",
   "scripts": {
-    "build": "gulp"
+    "build": "gulp",
+    "start": "concurrently \"gulp watch\" \"node server\" "
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,8 @@
   "dependencies": {
     "express": "^4.14.0",
     "materialize-css": "^0.97.6",
-    "page": "^1.7.1"
+    "page": "^1.7.1",
+    "yo-yo": "^1.2.2"
   },
   "devDependencies": {
     "babelify": "^7.3.0",
@@ -35,10 +37,5 @@
     "gulp-sass": "^2.3.2",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
-  },
-  "scripts":
-  {
-    "build":"gulp",
-    "start": "concurrently \"gulp watch\" \"node server\" "
   }
 }
