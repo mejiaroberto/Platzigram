@@ -1151,7 +1151,7 @@ page('/', function (ctx, next) {
 });
 
 page('/signup', function (ctx, next) {
-	main.innerHTML = 'Signup <a href="/">Home</a>';
+	main.innerHTML = 'signup 2<a href="/">Home</a>';
 });
 
 page();
