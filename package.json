@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/mejiaroberto/Platzigram#readme",
   "dependencies": {
+    "empty-element": "^1.0.0",
     "express": "^4.14.0",
     "materialize-css": "^0.97.6",
     "page": "^1.7.1",
@@ -37,5 +38,10 @@
     "gulp-sass": "^2.3.2",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
+  }, 
+
+  "scripts": {
+    "build": "gulp",
+    "start": "concurrently \"gulp watch\" \"node server\" "
   }
 }
