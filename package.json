@@ -28,6 +28,7 @@
     "express": "^4.14.0",
     "materialize-css": "^0.97.6",
     "page": "^1.7.1",
+    "title": "^1.0.0",
     "yo-yo": "^1.2.2"
   },
   "devDependencies": {
@@ -38,10 +39,5 @@
     "gulp-sass": "^2.3.2",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
-  }, 
-
-  "scripts": {
-    "build": "gulp",
-    "start": "concurrently \"gulp watch\" \"node server\" "
   }
 }
