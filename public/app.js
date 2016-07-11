@@ -2383,13 +2383,43 @@ module.exports = [
 
 },{}],17:[function(require,module,exports){
 var page = require('page');
+var empty = require('empty-element');
+var template = require('./template');
+var title = require('title');
 
 page('/', function (ctx, next) {
+	title('Platzigram');
 	var main = document.getElementById('main-container');
-	main.innerHTML = '<a href="/signup">Signup</a>';
+	empty(main).appendChild(template);
 });
 
-},{"page":4}],18:[function(require,module,exports){
+},{"./template":18,"empty-element":3,"page":4,"title":7}],18:[function(require,module,exports){
+var yo = require('yo-yo');
+
+var template = yo`<nav class="header">
+	<div class="nav-wrapper">
+	<div class="container">
+	<div class="row">
+	<div class="col s12 m6 offset-m10">
+	<a href="/" class="brand-logo platzigram">Platzigram</a>
+	</div>
+	<div class="col s2 m6 push-m10">
+	<a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">
+	<i class="fa fa-user" aria-hidden="true"></i>
+	</a>
+
+	<ul id="drop-user" class="dropdown-content">
+		<li><a href="#">Salir</a></li>
+	</ul>	
+	</div>
+	</div>
+	</div>
+	</div>
+	</nav>`;
+
+module.exports = template;
+
+},{"yo-yo":8}],19:[function(require,module,exports){
 var page = require('page');
 
 require('./homepage');
@@ -2398,7 +2428,7 @@ require('./signin');
 
 page();
 
-},{"./homepage":17,"./signin":20,"./signup":22,"page":4}],19:[function(require,module,exports){
+},{"./homepage":17,"./signin":21,"./signup":23,"page":4}],20:[function(require,module,exports){
 var yo = require('yo-yo');
 
 module.exports = function landig(box) {
@@ -2416,7 +2446,7 @@ module.exports = function landig(box) {
 	</div>`;
 };
 
-},{"yo-yo":8}],20:[function(require,module,exports){
+},{"yo-yo":8}],21:[function(require,module,exports){
 var page = require('page');
 var empty = require('empty-element');
 var template = require('./template');
@@ -2428,7 +2458,7 @@ page('/signin', function (ctx, next) {
 	empty(main).appendChild(template);
 });
 
-},{"./template":21,"empty-element":3,"page":4,"title":7}],21:[function(require,module,exports){
+},{"./template":22,"empty-element":3,"page":4,"title":7}],22:[function(require,module,exports){
 var yo = require('yo-yo');
 var landing = require('../landing');
 
@@ -2439,7 +2469,7 @@ var signinForm = yo`<div class="col s12 m7">
 							 <form class="signup-form">
 							    <div class="section">
 							    	<a class="btn btn-fb hide-on-small-only">Iniciar sesión con Facebook</a>
-							    	<a class="btn btn-fb hide-on-med-and-up">Iniciar sesión</a>
+							    	<a class="btn btn-fb hide-on-med-and-up"><i class="fa fa-facebook-official"></i>Iniciar sesión</a>
 							    </div>
 							 	<div class="divider"></div>
 							 	<div class="section">
@@ -2459,7 +2489,7 @@ var signinForm = yo`<div class="col s12 m7">
 
 module.exports = landing(signinForm);
 
-},{"../landing":19,"yo-yo":8}],22:[function(require,module,exports){
+},{"../landing":20,"yo-yo":8}],23:[function(require,module,exports){
 var page = require('page');
 var empty = require('empty-element');
 var template = require('./template');
@@ -2471,7 +2501,7 @@ page('/signup', function (ctx, next) {
 	empty(main).appendChild(template);
 });
 
-},{"./template":23,"empty-element":3,"page":4,"title":7}],23:[function(require,module,exports){
+},{"./template":24,"empty-element":3,"page":4,"title":7}],24:[function(require,module,exports){
 var yo = require('yo-yo');
 var landing = require('../landing');
 
@@ -2483,7 +2513,7 @@ var signupForm = yo`<div class="col s12 m7">
 							   <h2>Registrate para ver las fotos de tus amigos estudiando en Platzi</h2>
 							    <div class="section">
 							    	<a class="btn btn-fb hide-on-small-only">Iniciar sesión con Facebook</a>
-							    	<a class="btn btn-fb hide-on-med-and-up">Iniciar sesión</a>
+							    	<a class="btn btn-fb hide-on-med-and-up"><i class="fa fa-facebook-official"></i>Iniciar sesión</a>
 							    </div>
 							 	<div class="divider"></div>
 							 	<div class="section">
@@ -2505,4 +2535,4 @@ var signupForm = yo`<div class="col s12 m7">
 
 module.exports = landing(signupForm);
 
-},{"../landing":19,"yo-yo":8}]},{},[18]);
+},{"../landing":20,"yo-yo":8}]},{},[19]);
